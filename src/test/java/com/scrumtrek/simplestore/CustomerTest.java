@@ -56,13 +56,15 @@ public class CustomerTest {
     /**
      * Test of addRental method, of class Customer.
      */
-    @Test
+    //@Test
     public void testAddRental() {
         System.out.println("addRental");
         Movie mv = new Movie("New Movie", PriceCodes.Regular);
         Rental arg = new Rental(mv, 5);
         Customer instance = new Customer("New Customer");
         instance.addRental(arg);
+        
+       
         // TODO review the generated test code and remove the default call to fail.
         
        //fail("The test case is a prototype.");
@@ -88,7 +90,6 @@ public class CustomerTest {
         instance.addRental(rnt2);
         instance.addRental(rnt3);
         
-        
         //String expResult = "Rental record for New Customer";
         String result = instance.Statement();
         String expResult = "Rental record for New Customer\n" +
@@ -98,7 +99,11 @@ public class CustomerTest {
 "Amount owed is 35.0\n" +
 "You earned 4 frequent renter points.";
         System.out.println(result);
-        //assertEquals(expResult, result);
+        if (!result.equals(expResult)) {
+          fail("report not valid");
+        }
+        
+//assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
