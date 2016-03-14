@@ -43,39 +43,28 @@ public class RentalTest {
     @Test
     public void testGetDaysRented() {
         System.out.println("getDaysRented");
-        Movie mv = new Movie("New Movie", PriceCodes.Regular);
-        Rental instance = new Rental(mv, 5);
-
-        int expResult = 5;
+        Movie mv = new Movie("New movie", PriceCodes.Regular);
+        Rental instance = new Rental(mv, 2);
+        int expResult = 2;
         int result = instance.getDaysRented();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        if (result != expResult) 
-        {
-          fail("The test case failed.");
-        }
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of getMovie method, of class Rental.
      */
-   // @Test
+    @Test
     public void testGetMovie() {
         System.out.println("getMovie");
-
-        Movie mv = new Movie("New Movie", PriceCodes.Regular);
-        //Rental instance = new Rental(mv, 5);
-
-        //Rental instance = null;
-        Movie expResult = "New Movie";
+        Movie mv = new Movie("New movie", PriceCodes.Regular);
+        Rental instance = new Rental(mv, 5);
+        Movie expResult = mv;
         Movie result = instance.getMovie();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-
-        if (!result.equals("New Movie")) {
-            fail("The test case failed.");
-        }
-
+        //fail("The test case is a prototype.");
     }
     
 }

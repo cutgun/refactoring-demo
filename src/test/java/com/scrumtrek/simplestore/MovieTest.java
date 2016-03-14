@@ -40,7 +40,7 @@ public class MovieTest {
     /**
      * Test of getPriceCode method, of class Movie.
      */
-    //@Test
+    @Test
     public void testGetPriceCode() {
         System.out.println("getPriceCode");
         Movie instance = new Movie("New Movie", PriceCodes.Regular);
@@ -48,34 +48,23 @@ public class MovieTest {
         PriceCodes result = instance.getPriceCode();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of setPriceCode method, of class Movie.
-     */
-    //@Test
-    public void testSetPriceCode() {
-        System.out.println("setPriceCode");
-        PriceCodes value = null;
-        Movie instance = null;
-        instance.setPriceCode(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of getTitle method, of class Movie.
      */
-    //@Test
+    @Test
     public void testGetTitle() {
         System.out.println("getTitle");
-        Movie instance = null;
-        String expResult = "";
+        Movie instance = new Movie("New movie", PriceCodes.Regular);
+        String expResult = "New movie";
         String result = instance.getTitle();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
