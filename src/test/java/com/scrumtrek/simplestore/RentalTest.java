@@ -59,7 +59,7 @@ public class RentalTest {
     /**
      * Test of getMovie method, of class Rental.
      */
-    @Test
+   // @Test
     public void testGetMovie() {
         System.out.println("getMovie");
 

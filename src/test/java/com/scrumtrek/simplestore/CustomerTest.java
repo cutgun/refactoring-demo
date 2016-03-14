@@ -74,13 +74,31 @@ public class CustomerTest {
     @Test
     public void testStatement() {
         System.out.println("Statement");
-        Movie mv = new Movie("New Movie", PriceCodes.Regular);
-        Rental arg = new Rental(mv, 5);
+  	
+        Movie movCinderella = new Movie("Cinderella", PriceCodes.Childrens);
+	Movie movStarWars = new Movie("Star Wars", PriceCodes.Regular);
+	Movie movGladiator = new Movie("Gladiator", PriceCodes.NewRelease);
+        
+        Rental rnt1 = new Rental(movCinderella, 5);
+        Rental rnt2 = new Rental(movStarWars, 1);
+        Rental rnt3 = new Rental(movGladiator, 10);
+        
         Customer instance = new Customer("New Customer");
-        instance.addRental(arg);
+        instance.addRental(rnt1);
+        instance.addRental(rnt2);
+        instance.addRental(rnt3);
+        
+        
         //String expResult = "Rental record for New Customer";
         String result = instance.Statement();
-      //  assertEquals(expResult, result);
+        String expResult = "Rental record for New Customer\n" +
+"	Cinderella	3.0\n" +
+"	Star Wars	2.0\n" +
+"	Gladiator	30.0\n" +
+"Amount owed is 35.0\n" +
+"You earned 4 frequent renter points.";
+        System.out.println(result);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
