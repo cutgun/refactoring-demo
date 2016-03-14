@@ -43,8 +43,10 @@ public class RentalTest {
     @Test
     public void testGetDaysRented() {
         System.out.println("getDaysRented");
-        Rental instance = null;
-        int expResult = 0;
+        Movie mv = new Movie("New Movie", PriceCodes.Regular);
+        Rental instance = new Rental(mv, 5);
+
+        int expResult = 5;
         int result = instance.getDaysRented();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
