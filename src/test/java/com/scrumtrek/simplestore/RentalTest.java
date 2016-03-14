@@ -52,7 +52,7 @@ public class RentalTest {
         // TODO review the generated test code and remove the default call to fail.
         if (result != expResult) 
         {
-          fail("The test case is a prototype.");
+          fail("The test case failed.");
         }
     }
 
@@ -62,12 +62,20 @@ public class RentalTest {
     @Test
     public void testGetMovie() {
         System.out.println("getMovie");
-        Rental instance = null;
-        Movie expResult = null;
+
+        Movie mv = new Movie("New Movie", PriceCodes.Regular);
+        //Rental instance = new Rental(mv, 5);
+
+        //Rental instance = null;
+        Movie expResult = "New Movie";
         Movie result = instance.getMovie();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        if (!result.equals("New Movie")) {
+            fail("The test case failed.");
+        }
+
     }
     
 }
